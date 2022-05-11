@@ -23,7 +23,7 @@ const footerLinks = [
 </script>
 
 <template>
-  <header>
+  <header sticky top-0 z-1>
     <TheNavVue />
   </header>
   <main>

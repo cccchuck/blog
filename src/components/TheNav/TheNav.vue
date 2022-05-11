@@ -42,7 +42,7 @@ const goto = (name: string) => {
 </script>
 
 <template>
-  <nav text-black font-medium>
+  <nav text-black font-medium bg-white>
     <!-- PC Nav -->
     <div hidden sm:display-block>
       <ul flex justify-end items-center h-70px p-x-lg text-xl>

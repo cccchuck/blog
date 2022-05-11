@@ -1,7 +1,11 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router'
+import { Animate } from '@/utils'
+import { onMounted } from 'vue'
 
 const router = useRouter()
+
+const animate = new Animate(['.intro', '.blogs'])
 
 const posts = [
   {
@@ -23,6 +27,10 @@ const posts = [
 const handleToBlogs = () => {
   router.push('/blog')
 }
+
+onMounted(() => {
+  animate.observe()
+})
 </script>
 
 <template>
@@ -35,6 +43,7 @@ const handleToBlogs = () => {
     sm:max-w-1024px
     sm:mx-auto
     sm:mt-10rem
+    class="intro"
   >
     <img
       class="avatar"
@@ -72,6 +81,7 @@ const handleToBlogs = () => {
         border-rounded
         transition-300
         hover:cursor-pointer
+        hover:shadow-2xl
         hover:translate-y--5px
       >
         Contact Me
@@ -79,7 +89,7 @@ const handleToBlogs = () => {
     </div>
   </div>
 
-  <div c-bg-light-blue mt-2rem px-2rem pb-11 sm:mt-4rem>
+  <div c-bg-light-blue mt-2rem px-2rem pb-11 sm:mt-4rem class="blogs">
     <div sm:max-w-1024px sm:mx-auto>
       <p
         h-60px

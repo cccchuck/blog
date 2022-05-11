@@ -1,8 +1,12 @@
 {
   "extends": "@vue/tsconfig/tsconfig.node.json",
-  "include": ["vite.config.*", "src/**/*.vue"],
+  "include": ["custom.d.ts", "vite.config.*", "src/**/*.vue"],
   "compilerOptions": {
     "composite": true,
-    "types": ["node"]
+    "types": ["node"],
+    "lib": ["es2020", "dom"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   }
 }
